@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import ClientHeader from '@client/common/header/header';
 
 type ChildProps = {
     children: FC;
@@ -7,7 +8,7 @@ type ChildProps = {
 const ClientLayout: FC<ChildProps> = ({ children }: ChildProps) => {
     return (
         <>
-            this is client Layout
+            <ClientHeader />
             {children}
             this is client Layout
         </>
