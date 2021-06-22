@@ -1,14 +1,26 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import routers from './routers/index';
+import routers from '@routes/.';
 
 function App() {
     return (
-        // <h1> this is home page 12 </h1>
         <Router>
             <Switch>
-                {routers.map(({ exact, path, component }, i) => {
-                    return <Route key={i} exact={exact} path={path} component={component} />;
+                {routers.map(({ exact, path, component: Component, layout: Layout, routes: nestedRoutes }, i) => {
+                    return (
+                        <Route
+                            key={i}
+                            exact={exact}
+                            path={path}
+                            render={(props) => {
+                                return (
+                                    <Layout>
+                                        <Component {...props} routes={nestedRoutes} />
+                                    </Layout>
+                                );
+                            }}
+                        />
+                    );
                 })}
             </Switch>
         </Router>
