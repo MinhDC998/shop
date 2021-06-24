@@ -5,10 +5,11 @@
             "@src/*": ["./*"],
             "@components/*" : ["src/app/components/*"],
             "@routes/*": ["src/app/routers/*"],
-            "@assets/*": ["src/public/assets/*"],
             "@public/*": ["src/public/*"],
             "@client/*": ["src/app/components/client/*"],
-            "@admin/*": ["src/app/components/admin/*"]
+            "@admin/*": ["src/app/components/admin/*"],
+            "@images/*": ["src/public/assets/images/*"],
+            "@utils/*": ["src/app/utils/*"]
          }
     }
 }
