@@ -15,15 +15,11 @@ const NavMenu: FC<INavMenuProps> = (props: INavMenuProps) => {
                         <li key={i}>
                             <Link key={i} to={v.path} className="menu-link">
                                 {v.name}
-                                {v.subMenu ? (
-                                    <>
-                                        <span className="arrow-down" />
-                                        {renderMenu('sub-menu', v.subMenu)}
-                                    </>
-                                ) : (
-                                    ''
-                                )}
+
+                                {v.subMenu && <span className="arrow-down" />}
                             </Link>
+
+                            {v.subMenu ? <>{renderMenu('sub-menu', v.subMenu)}</> : ''}
                         </li>
                     );
                 })}

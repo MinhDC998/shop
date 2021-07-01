@@ -12,3 +12,8 @@ export interface IMenuArray extends IMenu {
 export interface INavMenuProps {
     menus: IMenuArray[]
 }
+
+export interface ISearchTag {
+    id?: number
+    name: string
+}

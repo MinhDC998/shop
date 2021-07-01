@@ -4,6 +4,7 @@ import { logo } from '@utils/images-loader';
 import NavMenu from '@client/common/header/top-menu';
 import Association from '@client/common/header/association';
 import { IMenuArray } from '@client/common/header/header.types';
+import ClientContextProvider from '@client/context/client-context';
 
 const links: IMenuArray[] = [
     {
@@ -52,15 +53,17 @@ const links: IMenuArray[] = [
 
 const ClientHeader: FC = () => {
     return (
-        <div className="main-content">
-            <header id="client-header">
-                <div id="nav-logo">
-                    <img src={logo} alt="" />
-                </div>
-                <NavMenu menus={links} />
-                <Association />
-            </header>
-        </div>
+        <ClientContextProvider>
+            <div className="main-content">
+                <header id="client-header">
+                    <div id="nav-logo">
+                        <img src={logo} alt="" />
+                    </div>
+                    <NavMenu menus={links} />
+                    <Association />
+                </header>
+            </div>
+        </ClientContextProvider>
     );
 };
 
