@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 export interface IChildrenProps {
-    children: FC;
+    children: FC | any;
 }
 
 export interface IClientContext {
