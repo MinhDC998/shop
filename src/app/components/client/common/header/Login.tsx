@@ -1,9 +1,16 @@
 import React, { FC } from 'react';
 import { BiUser, BiLock } from 'react-icons/bi';
+import { Form, Input, Label, WrapperSectionInput } from '@elements/form/form';
+
+const initialState = {
+    email: '',
+    password: '',
+    remember: false,
+};
+
 const LoginForm: FC = () => {
-    const onSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log(1);
+    const onSubmit = (values: any, action: any) => {
+        console.log(values);
     };
 
     return (
@@ -12,26 +19,29 @@ const LoginForm: FC = () => {
                 <BiUser />
             </label>
             <input type="checkbox" id="show-login-form" />
-            <form id="login-form" onSubmit={onSubmit}>
-                <div className="wrapper-input">
-                    <label htmlFor="email" className="label-form">
-                        <BiUser /> Email
-                    </label>
-                    <input type="text" name="email" id="email" className="input-form" placeholder="Enter your email" />
-                </div>
 
-                <div className="wrapper-input">
-                    <label htmlFor="password" className="label-form">
-                        <BiLock /> Password
-                    </label>
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
+            <Form formProps={{ initialState, onSubmit }} styleId={'login-form'}>
+                <WrapperSectionInput className="wrapper-input">
+                    <Label labelFor="email" className="label-form" labelTitle="Email" icon={<BiUser />} />
+                    <Input
+                        name="email"
                         className="input-form"
+                        type="text"
+                        styleId="email"
+                        placeholder="Enter your email"
+                    />
+                </WrapperSectionInput>
+
+                <WrapperSectionInput className="wrapper-input">
+                    <Label labelFor="password" className="label-form" labelTitle="Password" icon={<BiLock />} />
+                    <Input
+                        name="password"
+                        className="input-form"
+                        type="password"
+                        styleId="password"
                         placeholder="Enter your password"
                     />
-                </div>
+                </WrapperSectionInput>
 
                 <div id="login-action">
                     <div id="remember-me">
@@ -54,7 +64,7 @@ const LoginForm: FC = () => {
                     </label>
                     <input type="checkbox" id="to-register" />
                 </div>
-            </form>
+            </Form>
         </>
     );
 };

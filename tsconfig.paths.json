@@ -9,7 +9,8 @@
             "@client/*": ["src/app/components/client/*"],
             "@admin/*": ["src/app/components/admin/*"],
             "@images/*": ["src/public/assets/images/*"],
-            "@utils/*": ["src/app/utils/*"]
+            "@utils/*": ["src/app/utils/*"],
+            "@elements/*": ["src/app/elements/*"]
          }
     }
 }
