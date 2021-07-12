@@ -1,33 +1,27 @@
 import React, { FC } from 'react';
-import { BiUser, BiLock } from 'react-icons/bi';
-import { Form, Input, Label, WrapperSectionInput, Button } from '@elements/form/form';
-import { ICustomUseInput } from '@elements/form/form.types';
 import { IToggleForm } from '@client/common/header/header.types';
+import { Form, Input, Label, WrapperSectionInput, Button } from '@elements/form/form';
+import { BiUser, BiLock } from 'react-icons/bi';
 
 const initialState = {
     email: '',
     password: '',
-    remember: false,
+    confirmPassword: '',
+    fullName: '',
+    phone: '',
 };
 
-const LoginForm: FC<IToggleForm> = ({ isShow, toggleRegister }: IToggleForm) => {
-    console.log({ isShow, toggleRegister });
-
-    const onSubmit = (
-        values: ICustomUseInput['formAction'],
-        actions: ICustomUseInput['formAttributes']['actions'],
-    ): void => {
-        setTimeout(() => {
-            actions.toggleSubmitting(false); // logic login goes here
-        }, 2000);
+const Register: FC<IToggleForm> = ({ isShow, toggleRegister }: IToggleForm) => {
+    const onSubmit = () => {
+        console.log(1);
     };
 
     return (
         <>
             <Form
                 formProps={{ initialState, onSubmit }}
-                id={'login-form'}
-                className={`${isShow ? 'login-hidden' : ''}`}>
+                id="register-form"
+                className={`${isShow ? 'register-show' : ''}`}>
                 <WrapperSectionInput className="wrapper-input">
                     <Label htmlFor="email" className="label-form" labelTitle="Email" icon={<BiUser />} />
                     <Input name="email" className="input-form" type="text" id="email" placeholder="Enter your email" />
@@ -44,22 +38,13 @@ const LoginForm: FC<IToggleForm> = ({ isShow, toggleRegister }: IToggleForm) => 
                     />
                 </WrapperSectionInput>
 
-                <div id="login-action">
-                    <div id="remember-me">
-                        <input type="checkbox" id="remember" name="remember" />
-                        <label htmlFor="remember">Remember me</label>
-                    </div>
-
-                    <span id="forgot-password">Forgot your password?</span>
-                </div>
-
                 <Button id="login-btn" className="btn" buttonTitle="Login" />
 
                 <div className="or-divide">
                     <span>Or</span>
                 </div>
 
-                <div className="btn" id="register-redirect" onClick={toggleRegister(true)}>
+                <div className="btn" id="register-redirect" onClick={toggleRegister(false)}>
                     Register
                 </div>
             </Form>
@@ -67,4 +52,4 @@ const LoginForm: FC<IToggleForm> = ({ isShow, toggleRegister }: IToggleForm) => 
     );
 };
 
-export default LoginForm;
+export default Register;

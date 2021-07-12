@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 interface IFormCommon {
     className?: string
-    styleId?: string
+    id?: string
 }
 
 export type ICommonState = Record<string, string | number | boolean>;
@@ -23,11 +23,30 @@ export interface INormalInput extends IFormCommon {
 }
 
 export interface ILabel extends IFormCommon {
-    labelFor: string
+    htmlFor: string
     labelTitle: string
     icon?: JSX.Element
 }
 
 export interface IWrapperSectionInput extends IFormCommon {
     children: React.ReactNode
+}
+
+export interface ICustomUseInput {
+    formAction: {
+        state: ICommonState;
+        onChangeValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    }
+    formAttributes: {
+        values: {
+            isOnSubmit: boolean
+        }
+        actions: {
+            toggleSubmitting: (isSubmit: boolean) => void
+        }
+    }
+}
+
+export interface IButton extends IFormCommon {
+    buttonTitle: string
 }

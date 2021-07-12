@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-types */
+import React from 'react';
 export interface IMenu {
     name: string;
     path: string;
@@ -16,4 +18,9 @@ export interface INavMenuProps {
 export interface ISearchTag {
     id?: number
     name: string
+}
+
+export interface IToggleForm {
+    isShow: boolean
+    toggleRegister: (isShow: boolean) => (e: React.MouseEvent<HTMLInputElement>) => void
 }
