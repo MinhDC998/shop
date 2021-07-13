@@ -1,0 +1,127 @@
+@import 'src/public/css/variables.scss';
+
+$backgroundColor: #151616;
+$footerTextColor: #b4b3b3;
+
+$red: #f37272;
+$brown: #584e4a;
+$whitey: #f0f0f0;
+
+$duration: 0.2s;
+$distance: 8px;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+.footer-main-content {
+    margin: 0 auto;
+    display: block;
+    width: 1140px;
+}
+
+#wrapper-footer {
+    background-color: $backgroundColor;
+}
+
+#top-footer {
+    display: flex;
+    justify-content: space-between;
+    color: $footerTextColor;
+    padding: 100px 0 60px;
+
+    #footer-intro {
+        width: 50%;
+        padding: 0 15px;
+        display: block;
+
+        #footer-intro__desc {
+            margin: 16px 0;
+        }
+
+        .contact-icons {
+            margin-right: 16px;
+        }
+    }
+
+    .footer-info-box {
+        width: 25%;
+        .box-title {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        ul {
+            margin-top: 16px;
+            li {
+                margin-bottom: 10px;
+                a {
+                    color: $footerTextColor;
+                    transition: all 0.3s ease-out 0s;
+                    font-size: 14px;
+                    padding-bottom: 8px;
+                    position: relative;
+
+                    &:before,
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: 2px;
+                        left: 0;
+                        right: 0;
+                        height: 2px;
+                        background-color: #fff;
+                    }
+                    &:before {
+                        opacity: 0;
+                        transform: translateY($distance);
+                        transition: transform 0s $easeOutBack, opacity 0s;
+                    }
+                    &:after {
+                        opacity: 0;
+                        transform: translateY($distance/2);
+                        transition: transform $duration $easeOutBack, opacity $duration;
+                    }
+                    &:hover {
+                        color: #fff;
+                        &:before,
+                        &:after {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                        &:before {
+                            transition: transform $duration $easeOutBack, opacity $duration;
+                        }
+                        &:after {
+                            transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#bottom-footer {
+    padding: 45px 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $primaryColor;
+    #copy-right {
+        color: $footerTextColor;
+        font-size: 14px;
+        a {
+            color: $primaryColor;
+        }
+    }
+
+    #association-link {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 14px;
+        .association-icon {
+            margin-left: 40px;
+            a {
+                color: $footerTextColor;
+            }
+        }
+    }
+}

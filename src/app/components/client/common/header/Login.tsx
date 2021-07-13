@@ -11,8 +11,6 @@ const initialState = {
 };
 
 const LoginForm: FC<IToggleForm> = ({ isShow, toggleRegister }: IToggleForm) => {
-    console.log({ isShow, toggleRegister });
-
     const onSubmit = (
         values: ICustomUseInput['formAction'],
         actions: ICustomUseInput['formAttributes']['actions'],
@@ -59,7 +57,7 @@ const LoginForm: FC<IToggleForm> = ({ isShow, toggleRegister }: IToggleForm) => 
                     <span>Or</span>
                 </div>
 
-                <div className="btn" id="register-redirect" onClick={toggleRegister(true)}>
+                <div className="btn register-redirect" onClick={toggleRegister(true)}>
                     Register
                 </div>
             </Form>

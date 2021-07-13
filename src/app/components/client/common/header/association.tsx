@@ -27,8 +27,10 @@ const Association: FC = () => {
 
                 <input type="checkbox" id="show-login-form" />
                 <div id="auth-box">
-                    <LoginForm isShow={isShowRegister} toggleRegister={toggleRegister} />
-                    <Register isShow={isShowRegister} toggleRegister={toggleRegister} />
+                    <div id="wrapper-form">
+                        <LoginForm isShow={isShowRegister} toggleRegister={toggleRegister} />
+                        <Register isShow={isShowRegister} toggleRegister={toggleRegister} />
+                    </div>
                 </div>
             </div>
         </div>

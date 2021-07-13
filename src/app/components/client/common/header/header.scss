@@ -220,104 +220,108 @@ $menuFontSize: 14px;
             width: 300px;
             transform-origin: 0 0;
 
-            #login-form {
-                font-size: $menuFontSize;
-                transition: all 0.3s ease-out 0s;
-                transform: scaleX(1);
-                transform-origin: 0 0;
-                opacity: 1;
-                z-index: 1;
-                position: unset;
+            #wrapper-form {
+                position: relative;
 
-                #login-action {
-                    display: flex;
-                    justify-content: space-between;
-                    font-size: 12px;
-                    margin-bottom: 12px;
-                    #remember-me {
+                #login-form {
+                    font-size: $menuFontSize;
+                    transition: all 0.3s ease-out 0s;
+                    transform: scaleX(1);
+                    transform-origin: 0 0;
+                    opacity: 1;
+                    z-index: 1;
+                    position: unset;
+
+                    #login-action {
                         display: flex;
-                        align-items: center;
-                        cursor: pointer;
-                        #remember {
-                            margin-right: 6px;
+                        justify-content: space-between;
+                        font-size: 12px;
+                        margin-bottom: 12px;
+                        #remember-me {
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                            #remember {
+                                margin-right: 6px;
+                                cursor: pointer;
+                            }
+                        }
+
+                        #forgot-password {
                             cursor: pointer;
                         }
                     }
 
-                    #forgot-password {
+                    #login-btn {
+                        position: relative;
+                        &:hover {
+                            // background-color: #bc8246;
+                            transition: all 0.3s ease-out 0s;
+                            // color: #fff;
+                        }
+                    }
+
+                    .register-redirect {
+                        background-color: #333;
+                        color: #fff;
                         cursor: pointer;
+
+                        #to-register {
+                            // display: none;
+                        }
+
+                        &:hover {
+                            background-color: #bc8246;
+                            transition: all 0.3s ease-out 0s;
+                        }
                     }
                 }
 
-                #login-btn {
-                    position: relative;
-                    &:hover {
-                        // background-color: #bc8246;
-                        transition: all 0.3s ease-out 0s;
-                        // color: #fff;
-                    }
+                .login-hidden {
+                    opacity: 0 !important;
+                    z-index: -1 !important;
+                    transform: scaleX(0) !important;
+                    visibility: hidden !important;
+                    position: absolute !important;
                 }
 
-                #register-redirect {
-                    background-color: #333;
-                    color: #fff;
-                    cursor: pointer;
-
-                    #to-register {
-                        // display: none;
-                    }
-
-                    &:hover {
-                        background-color: #bc8246;
-                        transition: all 0.3s ease-out 0s;
-                    }
-                }
-            }
-
-            .login-hidden {
-                opacity: 0 !important;
-                z-index: -1 !important;
-                transform: scaleX(0) !important;
-                visibility: hidden !important;
-                position: absolute !important;
-            }
-
-            #register-form {
-                font-size: $menuFontSize;
-                transition: all 0.3s ease-out 0s;
-                transform: scaleX(0);
-                transform-origin: right;
-                opacity: 0;
-                z-index: -1;
-                position: absolute;
-                visibility: hidden;
-            }
-
-            .register-show {
-                opacity: 1 !important;
-                z-index: 1 !important;
-                transform: scaleX(1) !important;
-                visibility: visible !important;
-                position: relative !important;
-            }
-
-            .or-divide {
-                position: relative;
-                text-align: center;
-                border-bottom: 1px solid #eaedff;
-                margin: 24px 0;
-                z-index: 0;
-
-                span {
+                #register-form {
+                    font-size: $menuFontSize;
+                    transition: all 0.3s ease-out 0s;
+                    transform: scaleX(0);
+                    transform-origin: right;
+                    opacity: 0;
+                    z-index: -1;
                     position: absolute;
-                    z-index: 1;
-                    background-color: #fff;
-                    left: 0;
-                    right: 0;
-                    top: -10px;
-                    margin: 0 auto;
-                    width: 60px;
-                    font-size: 12px;
+                    visibility: hidden;
+                }
+
+                .register-show {
+                    opacity: 1 !important;
+                    z-index: 1 !important;
+                    transform: scaleX(1) !important;
+                    visibility: visible !important;
+                    position: relative !important;
+                }
+
+                .or-divide {
+                    position: relative;
+                    text-align: center;
+                    border-bottom: 1px solid #eaedff;
+                    margin: 24px 0;
+                    z-index: 0;
+
+                    span {
+                        position: absolute;
+                        z-index: 1;
+                        background-color: #fff;
+                        left: 0;
+                        right: 0;
+                        top: -10px;
+                        margin: 0 auto;
+                        width: 60px;
+                        font-size: 12px;
+                    }
                 }
             }
         }
