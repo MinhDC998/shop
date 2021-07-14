@@ -1,0 +1,37 @@
+$successBackground: #dff0d8;
+$successBorderColor: #d6e9c6;
+#message-box {
+    position: fixed;
+    padding: 3px 12px;
+    display: block;
+    top: 0;
+    border-radius: 5px;
+    left: 50%;
+    font-size: 14px;
+    transition: all 0.3s ease-out 0s;
+    transform: scaleY(1);
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: top;
+    z-index: -1;
+}
+
+.message-show-up {
+    transform: scaleY(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: 3% !important;
+    z-index: 10 !important;
+}
+
+.message-success {
+    color: #3c763d;
+    background-color: $successBackground;
+    border: 1px solid $successBorderColor;
+}
+
+.message-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+}

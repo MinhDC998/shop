@@ -6,6 +6,8 @@ import '@public/css/core.scss';
 function App() {
     return (
         <Router>
+            <div id="message-box"></div>
+
             <Switch>
                 {routers.map(({ exact, path, component: Component, layout: Layout, routes: nestedRoutes }, i) => {
                     return (
