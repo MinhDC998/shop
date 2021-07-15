@@ -22,7 +22,7 @@ const renderBox = (message: string, messageType: string, config?: IConfigMessage
     );
 };
 
-const success = (message: string, config?: IConfigMessage): any => {
+const success = (message: string, config?: IConfigMessage): void => {
     renderBox(message, 'message-success', config);
 };
 

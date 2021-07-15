@@ -51,7 +51,7 @@ const LoginForm: FC<IToggleForm> = ({ isShow, toggleRegister }: IToggleForm) => 
                     <span id="forgot-password">Forgot your password?</span>
                 </div>
 
-                <Button id="login-btn" className="btn" buttonTitle="Login" />
+                <Button id="login-btn" className="btn full-width" buttonTitle="Login" />
 
                 <div className="or-divide">
                     <span>Or</span>

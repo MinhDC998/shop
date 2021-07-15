@@ -76,7 +76,7 @@ const Register: FC<IToggleForm> = ({ isShow, toggleRegister }: IToggleForm) => {
                     />
                 </WrapperSectionInput>
 
-                <Button id="login-btn" className="btn" buttonTitle="Register" />
+                <Button id="login-btn" className="btn full-width" buttonTitle="Register" />
 
                 <div className="or-divide">
                     <span>Or</span>
